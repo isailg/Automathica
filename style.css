@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+}
+.state {
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.arrow {
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+  marker-end: url(#arrowhead);
+}
+
+.label {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  user-select: none;
+}
+
+.arrow-label {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  fill: black;
+  user-select: none;
+  text-anchor: middle;
+}
