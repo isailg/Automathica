@@ -165,7 +165,7 @@ function drawAutomaton(states, alphabet, initialState, aceptStates, transitions)
               break;
             }
           }
-          drawDoubleCurve(fromPos, toPos, label1, label2);
+          drawDoubleCurve(fromPos, toPos, label2, label1); // label2 y label 1 para dibujar bien
           drawnPairs.add(pairKey);
         } else if (!reverseExists) {
             const dx = toPos.x - fromPos.x;
