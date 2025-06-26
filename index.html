@@ -2,14 +2,91 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>State Machines</title>
+  <title> Automathica | isailopgar | Finite State Machine Visualizer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Theory of Computation</h2>
-  <h3>• Non Determinist Finite Automata •</h3>
-  <svg id="canvas" width="800" height="600"></svg>
+  
+  <h1>Automath1ca</h1>
+  <h5>by Isai Lopez-Garcia
+  </h5>
 
-  <script src="smf.js"></script>
+
+  <section style="margin-bottom: 2em; background-color: rgba(255, 255, 255, 0.05); padding: 0.6em; border-radius: 10px;">
+    <h2 style="color: #ddd;">¿Cómo visualizar automatas?</h2>
+    <ul style="color: #ccc; list-style: none; line-height: 1.6;">
+      <li>Escribe los <strong>estados</strong> separados por comas. Ejemplo: <code>q0,q1,q2</code></li>
+      <li>Define el <strong>estado inicial</strong> (uno de los anteriores).</li>
+      <li>Indica los <strong>estados finales</strong> separados por comas. Ejemplo: <code>q2</code></li>
+      <li>Agrega las <strong>transiciones</strong> en el formato: <code>Estado origen; símbolos ;Estado destino</code></li>
+      <li>Puedes usar múltiples símbolos: <code>q1;0,1;q2</code></li>
+      <li>Presiona <strong> Generar Automata</strong> para visualizar el automata muy épicamente.</li>
+    </ul>
+  </section>
+  
+    <form id="automatonForm">
+        <h3 style="color: #666;">Ingresa la 5-Tupla:</h3>
+      <label><strong>Q:</strong></label>
+      <input type="text" id="states" size="10" value="q0,q1,q2" required />
+
+      <label><strong>Σ:</strong></label>
+      <input type="text" id="alphabet" size="10" value="0,1" required />
+
+      <label><strong>q₀:</strong></label>
+      <input type="text" id="initial" size="10" value="q0" required />
+
+      <label><strong>F:</strong></label>
+      <input type="text" id="finals" size="10" value="q2" required />
+
+      <label><strong>δ:</strong></label>
+      <textarea id="transitions" rows="3" cols="10" required>q0;0;q1
+q1;0,1;q0
+q1;0;q2
+q2;1;q1
+q0;0;q2
+q1;1;q1
+q0;ε;q0</textarea>
+
+      <button type="submit"> Generar Automata</button>
+      <svg id="canvas" width="600" height="600"></svg>
+    </form>
+
+    <section style="margin-bottom: 2em; background-color: rgba(255, 255, 255, 0.05); padding: 0.6em; border-radius: 10px;">
+      <h2 style="color: #ddd;">¿Cadena aceptada o rechazada?</h2>
+      <ul style="color: #ccc; list-style: none; line-height: 1.6;">
+          <li>Escribe la <strong>cadena</strong> que quieres evaluar.</li>
+        <li> Ejemplo: <strong><code>Carmen, se me perdió tu cadenita...</code></strong></li>
+        
+        <li>Presiona <strong> Verificar </strong> con toda la actitud.</li>
+      </ul>
+    </section>
+    
+    <h3 style="color: #666;">Verifica una cadena:</h3>
+    <input type="text" id="inputString" placeholder="Ingresa cadena">
+        <button type="button" id="checkStringBtn" >Verificar</button>
+        
+        <div id="resultado" style="margin-top: 10px; font-weight: bold;"></div>
+        
+        
+        
+        
+<section style="margin-bottom: 2em; background-color: rgba(255, 255, 255, 0.05); padding-top: 3em; border-radius: 10px;">
+            <ul style="color: #ccc; list-style: none; line-height: 1.6;">
+            <li>Center for Research in Computing</li>
+            <li> National Polytechnic Institute</li>
+            <li> Mexico</li>
+                
+                
+            </ul>
+</section>
+        
+        
+        
+        
+        <script src="smf.js"></script>
+        <footer style="margin-top: 40px; text-align: center; font-size: 14px; color: #777;">
+          <hr style="margin-bottom: 10px;">
+          Isaí López-García · Automathica · 2025
+        </footer>
 </body>
 </html>

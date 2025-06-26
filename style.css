@@ -1,8 +1,9 @@
 body {
     text-align: center;
+    background-color: #ffffff;
 }
 .state {
-  fill: white;
+  fill: #ffffff;
   stroke: black;
   stroke-width: 2px;
 }
