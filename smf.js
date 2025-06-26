@@ -132,7 +132,7 @@ function drawAutomaton(states, alphabet, initialState, aceptStates, transitions)
 
 
 
-  // Para evitar dibujar doble curva dos veces, guardamos pares ya dibujados
+  
   const drawnPairs = new Set();
 
   // Dibujar transiciones
@@ -149,16 +149,15 @@ function drawAutomaton(states, alphabet, initialState, aceptStates, transitions)
           continue;
         }
 
-        // Detectar si hay transición opuesta (de to a from)
+        // Detectar si hay transición opuesta
         const reverseExists = transitions[to] && Object.values(transitions[to]).some(arr => arr.includes(from));
 
-        // Crear clave única ordenada para pares (para no repetir dibujo doble)
         const pairKey = [from, to].sort().join("|");
 
         if (reverseExists && !drawnPairs.has(pairKey)) {
-          // Doble curva con etiquetas por símbolos concatenados si ambos tienen símbolos diferentes
+          // Doble curva
           const label1 = symbol;
-          // Buscar símbolo inverso que va de 'to' a 'from'
+          // Buscar símbolo inverso
           let label2 = "";
           for (const sym in transitions[to]) {
             if (transitions[to][sym].includes(from)) {
@@ -333,7 +332,7 @@ function drawLoop(state, label = "") {
     y: state.y + ny * radiusCircle - ty * offset,
   };
 
-  // Control points para curva C
+
   const cp1 = {
     x: state.x + tx * minorRadius,
     y: state.y - radiusCircle - majorRadius,
